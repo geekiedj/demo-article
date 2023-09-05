@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style id="antiClickjack">
+      body {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>This is your web page content</h1>
+    <script type="text/javascript" id="antiClickjackJS">
+      if (self === top) {
+        var antiClickjack = document.getElementById("antiClickjack");
+        antiClickjack.parentNode.removeChild(antiClickjack);
+      } else {
+        top.location = self.location;
+      }
+    </script>
+  </body>
+</html>
